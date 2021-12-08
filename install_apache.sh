@@ -1,5 +1,6 @@
-yum update -y
-yum install -y httpd.x86_64
-systemctl start httpd.service
-systemctl enable httpd.service
-echo "Hello World from $(hostname -f)" > /var/www/html/index.html
+#!/bin/bash
+sudo su
+yum -y install httpd
+echo "<p> MGRazza is the best! </p>" >> /var/www/html/index.html
+sudo systemctl enable httpd
+sudo systemctl start httpd
